@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Незнакомцы в сети — цифровая безопасность</title>
+  <link rel="stylesheet" href="files/style.css">
+</head>
+<body>
+
+  <!-- ЭКРАН 1: СТАРТ -->
+  <section id="screen-start" class="screen active">
+    <div class="start-card">
+      <div class="start-text">
+        <div class="badge" id="start-badge"></div>
+        <h1 id="start-title"></h1>
+        <p class="start-lead">Тебе пишут в чатах, играх и соцсетях. Прочитай сообщение и реши, как поступить безопасно.</p>
+        <ul class="how">
+          <li><span class="how-num">1</span>Читай сообщение на телефоне</li>
+          <li><span class="how-num">2</span>Выбирай один из трёх ответов</li>
+          <li><span class="how-num">3</span>Собирай звёзды и правила безопасности</li>
+        </ul>
+        <button class="btn btn-primary btn-big" id="btn-start">Начать игру</button>
+      </div>
+      <div class="start-mascot">
+        <div class="mascot-bubble">Привет! Я совёнок Байт. Помогу тебе не попасться на уловки!</div>
+        <div class="mascot mascot-large" data-mascot></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 2: СИТУАЦИЯ -->
+  <section id="screen-game" class="screen">
+    <header class="topbar">
+      <div class="progress" id="progress"></div>
+      <div class="topbar-right">
+        <div class="stars-count"><span class="star-icon">★</span> <span id="stars-now">0</span></div>
+        <button class="icon-btn" id="btn-sound" title="Звук">🔊</button>
+      </div>
+    </header>
+
+    <div class="game-layout">
+      <!-- Телефон -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-status"><span>12:30</span><span>📶🔋</span></div>
+          <div class="phone-app" id="phone-app"></div>
+          <div class="phone-screen" id="phone-screen"></div>
+        </div>
+      </div>
+
+      <!-- Вопрос и ответы -->
+      <div class="panel">
+        <div class="situation-label" id="situation-label"></div>
+        <h2 class="question" id="question"></h2>
+        <div class="answers" id="answers"></div>
+
+        <div class="feedback hidden" id="feedback">
+          <div class="mascot mascot-small" data-mascot></div>
+          <div class="feedback-body">
+            <div class="feedback-title" id="feedback-title"></div>
+            <div class="feedback-text" id="feedback-text"></div>
+          </div>
+        </div>
+
+        <div class="panel-bottom">
+          <div class="rule hidden" id="rule">
+            <div class="rule-label">Правило безопасности</div>
+            <div class="rule-text" id="rule-text"></div>
+          </div>
+          <div class="panel-actions">
+            <button class="btn btn-secondary hidden" id="btn-retry">Попробовать ещё раз</button>
+            <button class="btn btn-primary hidden" id="btn-next">Дальше →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 3: ФИНАЛ -->
+  <section id="screen-finish" class="screen">
+    <div class="finish-card">
+      <div class="finish-head">
+        <div class="mascot mascot-medium" data-mascot></div>
+        <div>
+          <div class="finish-title" id="finish-title"></div>
+          <div class="finish-score" id="finish-score"></div>
+          <div class="finish-stars" id="finish-stars"></div>
+        </div>
+      </div>
+      <h3 class="memo-title">Памятка: правила безопасности в сети</h3>
+      <ol class="memo" id="memo"></ol>
+      <div class="finish-actions">
+        <button class="btn btn-secondary" id="btn-print">🖨 Распечатать памятку</button>
+        <button class="btn btn-primary" id="btn-restart">Сыграть ещё раз</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Сначала тексты, потом движок -->
+  <script src="files/stories.js"></script>
+  <script src="files/game.js"></script>
+</body>
+</html>
